@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>CasMmerce  | {% block title  %}{% endblock title  %}</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel='stylesheet' href="{% static "app/css/owl.carousel.min.css" %}"/>
+        <link rel='stylesheet' href="{% static "app/css/all.min.css" %}"/>
+        <link rel='stylesheet' href="{% static "app/css/style.css" %}"/>
+
+    </head>
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-success">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                <img src="{% static "app/images/pexels-expect-best-323780.jpg" %}" width="100" height="80" alt="logo"/>
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link text-white active" aria-current="page" href="/">Home</a>
+                  </li>
+                  
+                  <li class="nav-item dropdown">
+                    <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Products
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="{% url "category" "ML" %}">Milk</a></li>
+                      <li><a class="dropdown-item" href="{% url "category" "GH" %}">Ghee</a></li>
+                      <li><a class="dropdown-item" href="{% url "category" "IC" %}">Ice Bars</a></li>
+                      <li><a class="dropdown-item" href="{% url "category" "MS" %}">Milk Shake</a></li>
+                      
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link text-white" href="{% url "about"  %}" tabindex="-1" aria-disabled="true">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white" href="{% url "contact" %}" tabindex="-1" aria-disabled="true">Contact Us</a>
+                  </li>
+
+                  
+                </ul>
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+              </div>
+
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown mx-2">
+                  <a class="nav-link dropdown-toggle text-white" href="" id="profieDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Castro</a>
+                  <ul class="dropdown-menu" aria-labelledby="profieDropdown">
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Orders</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item mx-2">
+                  <a href="#" class="nav-link text-white">Cart 4</a>
+                </li>
+
+                <li class="nav-item mx-2">
+                  <a href="#" class="nav-link text-white">Favorites</a>
+                </li>
+                
+                <li class="nav-item dropdown mx-2">
+                  <a class="nav-link dropdown-toggle text-white" href="" id="profieDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Sign In</a>
+                  <ul class="dropdown-menu" aria-labelledby="profieDropdown">
+                    <li><a class="dropdown-item" href="#">Register</a></li>
+                    <li><a class="dropdown-item" href="#">Log In</a></li>
+                    <li><a class="dropdown-item" href="#">Change Password</a></li>
+                    <li><a class="dropdown-item" href="#">Log Out</a></li>
+                  </ul>
+                </li>
+
+              </ul>
+            </div>
+          </nav>
+
+          {% block banner-slider %}{% endblock banner-slider %}
+          {% block information %}{% endblock information %}
+          {% block main-content %}{% endblock main-content %}
+
+        <footer class="container-fluid absolute-bottom bg-success text-center p-2 mt-5">
+          copyright : 2024
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script script="{% static "app/css/owl.carousel.min.js" %}"></script>
+<script script="{% static "app/css/myscript.js" %}"></script>
+<script script="{% static "app/css/all.min.js" %}"></script>
+
+
+
+
+</body>
+</html>
