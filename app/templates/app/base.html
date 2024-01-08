@@ -76,7 +76,7 @@
                   <ul class="dropdown-menu" aria-labelledby="profieDropdown">
                     <li><a class="dropdown-item" href="{% url "customerregistration" %}">Register</a></li>
                     <li><a class="dropdown-item" href="{% url "login" %}">Log In</a></li>
-                    <li><a class="dropdown-item" href="#">Change Password</a></li>
+                    <li><a class="dropdown-item" href="{% url "changepassword" %}">Change Password</a></li>
                     <li><a class="dropdown-item" href="#">Log Out</a></li>
                   </ul>
                 </li>
@@ -89,7 +89,7 @@
           {% block information %}{% endblock information %}
           {% block main-content %}{% endblock main-content %}
 
-        <footer class="container-fluid absolute-bottom bg-success text-center p-2 mt-5">
+        <footer class="container-fluid fixed-bottom bg-success text-center p-2 mt-5">
           copyright : 2024
         </footer>
 

@@ -3,7 +3,7 @@ from  . import views
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_view
-from . forms import LoginForm, MyPasswordResetForm
+from . forms import LoginForm, MyPasswordResetForm, MyPasswordChangeForm
 
 urlpatterns = [
     path('',views.home),
@@ -14,6 +14,9 @@ urlpatterns = [
     path('product-detail/<int:pk>',views.Product_Detail.as_view(),name="product-detail"),
     path('profile/',views.ProfileVie.as_view(), name='profile'),
     path('addres/',views.address, name='address'),
+    path('updateAddres/<int:pk>',views.updateAddress.as_view(), name='updateAddress'),
+    
+    
     
     
     #login authentication
@@ -23,5 +26,8 @@ urlpatterns = [
          (template_name='app/login.html',authentication_form=LoginForm),name='login'),
     path('password_reset/',auth_view.PasswordResetView.as_view
          (template_name='app/password_reset.html', form_class=MyPasswordResetForm), name='password_reset'),
+    path('passwordchange/',auth_view.PasswordChangeView.as_view
+         (template_name='app/passwordchange.html', form_class = MyPasswordChangeForm
+         ,success_url="app/passwordchangedone"),name="passwordchange"), 
     
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,5 +1,5 @@
 from  django.db.models import Count
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
 from . models import Product
 from . forms import CustomerProfileForm, CustomerRegistrationForm,Customer
@@ -46,6 +46,19 @@ class CustomerRegistrationView(View):
             messages.warning(request,"Invalid Input Data")
         return render(request, "app/customerregistration.html",locals())
     
+class MyPasswordResetFormView(View):
+    def get(self,request):
+        form=MyPasswordResetFormView()
+        return render(request, "app/password_reset.html",locals())
+    def post(self,request):
+        form=CustomerRegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request,"Congratulations! Password Updated Successfully")
+        else:
+            messages.warning(request,"Invalid Input Data")
+        return render(request, "app/password_reset.html",locals())
+
 class ProfileVie(View):
     def get(self,request):
         form= CustomerProfileForm()
@@ -71,5 +84,26 @@ class ProfileVie(View):
 def address(request):
     add=Customer.objects.filter(user=request.user)
     return render(request, "app/address.html",locals())
+
+class updateAddress(View):
+    def get(self,request,pk):
+        add=Customer.objects.get(pk=pk)
+        form =CustomerProfileForm(instance=add)
+        return render(request, "app/updateAddress.html",locals())
+    def post(self,request,pk):
+        form =CustomerProfileForm(request.POST)
+        if form.is_valid():
+            add=Customer.objects.get(pk=pk)
+            add.name=form.cleaned_data['name']
+            add.locality=form.cleaned_data['locality']
+            add.city=form.cleaned_data['city']
+            add.mobile=form.cleaned_data['mobile']
+            add.state=form.cleaned_data['state']
+            add.zipcode=form.cleaned_data['zipcode']
+            add.save()
+            messages.success(request,"Congratulations! Profile Updated Successfully")
+        else:
+            messages.warning(request,"Invalid Input Data")
+        return redirect ("address")
         
     
