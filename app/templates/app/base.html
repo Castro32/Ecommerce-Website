@@ -60,6 +60,8 @@
                   <a class="nav-link dropdown-toggle text-white" href="" id="profieDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Castro</a>
                   <ul class="dropdown-menu" aria-labelledby="profieDropdown">
                     <li><a class="dropdown-item" href="{% url "profile" %}">Profile</a></li>
+                    <li><a class="dropdown-item" href="{% url "passwordchange" %}">Change Password</a></li>
+                    <li><a class="dropdown-item" href="{% url "logout" %}">Log Out</a></li>
                     <li><a class="dropdown-item" href="#">Orders</a></li>
                   </ul>
                 </li>
@@ -72,12 +74,11 @@
                 </li>
                 
                 <li class="nav-item dropdown mx-2">
-                  <a class="nav-link dropdown-toggle text-white" href="" id="profieDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Sign In</a>
+                  <a class="nav-link dropdown-toggle text-white" href="" id="profieDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Register</a>
                   <ul class="dropdown-menu" aria-labelledby="profieDropdown">
                     <li><a class="dropdown-item" href="{% url "customerregistration" %}">Register</a></li>
                     <li><a class="dropdown-item" href="{% url "login" %}">Log In</a></li>
-                    <li><a class="dropdown-item" href="{% url "changepassword" %}">Change Password</a></li>
-                    <li><a class="dropdown-item" href="#">Log Out</a></li>
+                    
                   </ul>
                 </li>
 

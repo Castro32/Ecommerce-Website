@@ -46,10 +46,10 @@ class CustomerRegistrationView(View):
             messages.warning(request,"Invalid Input Data")
         return render(request, "app/customerregistration.html",locals())
     
-class MyPasswordResetFormView(View):
+class PasswordChangeFormView(View):
     def get(self,request):
-        form=MyPasswordResetFormView()
-        return render(request, "app/password_reset.html",locals())
+        form=PasswordChangeFormView()
+        return render(request, "app/passwordchange.html",locals())
     def post(self,request):
         form=CustomerRegistrationForm(request.POST)
         if form.is_valid():
@@ -57,7 +57,7 @@ class MyPasswordResetFormView(View):
             messages.success(request,"Congratulations! Password Updated Successfully")
         else:
             messages.warning(request,"Invalid Input Data")
-        return render(request, "app/password_reset.html",locals())
+        return render(request, "app/passwordchange.html",locals())
 
 class ProfileVie(View):
     def get(self,request):
