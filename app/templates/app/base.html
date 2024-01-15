@@ -8,14 +8,16 @@
         <link rel='stylesheet' href="{% static "app/css/owl.carousel.min.css" %}"/>
         <link rel='stylesheet' href="{% static "app/css/all.min.css" %}"/>
         <link rel='stylesheet' href="{% static "app/css/style.css" %}"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-r3IhwK/6S/ZYh9xJVtf6wTojcxp+kb5kr5bM/EXt8VTJ6xiCmIH8V+RhBfe98ajEMyW2+t4QbHE5tUKe2g7Mw==" crossorigin="anonymous" />
+
 
     </head>
     <body>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-success">
+        <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
             <div class="container-fluid">
               <a class="navbar-brand" href="#">
-                <img src="{% static "app/images/pexels-expect-best-323780.jpg" %}" width="100" height="80" alt="logo"/>
+                <img src="{% static "app/images/logo.png" %}" width="100" height="80" alt="logo"/>
               </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -32,12 +34,12 @@
                       Products
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="{% url "category" "ML" %}">Milk</a></li>
-                      <li><a class="dropdown-item" href="{% url "category" "GH" %}">Ghee</a></li>
-                      <li><a class="dropdown-item" href="{% url "category" "IC" %}">Ice Bars</a></li>
-                      <li><a class="dropdown-item" href="{% url "category" "MS" %}">Milk Shake</a></li>
+                      <li><a class="dropdown-item" href="{% url "category" "ML" %}"><i class="fas fa-couch"></i> Home and Furniture</a></li>
+                      <li><a class="dropdown-item" href="{% url "category" "GH" %}"><i class="fas fa-microchip"></i> Electronics</a></li>
+                      <li><a class="dropdown-item" href="{% url "category" "IC" %}"><i class="fas fa-tshirt"></i> Fashion</a></li>
+                      <li><a class="dropdown-item" href="{% url "category" "MS" %}"><i class="fas fa-book"></i> Office and Stationery</a></li>
                       
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      <li><a class="dropdown-item" href="#"><i class="fas fa-utensils"></i> Food and Grocery</a></li>
                     </ul>
                   </li>
 
@@ -60,23 +62,27 @@
                 <li class="nav-item dropdown mx-2">
                   <a class="nav-link dropdown-toggle text-white" href="" id="profieDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Castro</a>
                   <ul class="dropdown-menu" aria-labelledby="profieDropdown">
-                    <li><a class="dropdown-item" href="{% url "profile" %}">Profile</a></li>
-                    <li><a class="dropdown-item" href="#">Orders</a></li>
-                    <li><a class="dropdown-item" href="{% url "passwordchange" %}">Change Password</a></li>
+                    <li><a class="dropdown-item" href="{% url "profile" %}"><i class="fas fa-user"></i> Profile</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fas fa-shopping-bag"></i> Orders</a></li>
+                    <li><a class="dropdown-item" href="{% url "passwordchange" %}"> <i class="fas fa-key"></i> Change Password</a></li>
                   <li>
                     <form action="{% url 'logout' %}" method="post">
                       {% csrf_token %}
-                      <button type="submit" class="dropdown-item">Log Out</button>
+                      <button type="submit" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Log Out</button>
                     </form>
                   </li>
                   </ul>
                 </li>
                 <li class="nav-item mx-2">
-                  <a href="#" class="nav-link text-white">Cart 4</a>
+                  <a href="#" class="nav-link text-white">
+                    <i class="fas fa-shopping-cart"></i> Cart 
+                  </a>
                 </li>
+                
 
                 <li class="nav-item mx-2">
-                  <a href="#" class="nav-link text-white">Favorites</a>
+                  <a href="#" class="nav-link text-white">
+                    <i class="fas fa-heart"></i> Favorites</a>
                 </li>
 
                 {% else %}
@@ -95,20 +101,17 @@
           {% block information %}{% endblock information %}
           {% block main-content %}{% endblock main-content %}
 
-        <footer class="container-fluid fixed-bottom bg-success text-center p-2 mt-5">
+        <footer class="container-fluid relative-bottom bg-success text-center p-2 mt-5">
           copyright : 2024
         </footer>
 
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-<script script="{% static "app/css/owl.carousel.min.js" %}"></script>
-<script script="{% static "app/css/myscript.js" %}"></script>
-<script script="{% static "app/css/all.min.js" %}"></script>
-
-
-
-
+        <script src="{% static "app/js/owl.carousel.min.js" %}"></script>
+        <script src="{% static "app/js/myscript.js" %}"></script>
+        <script src="{% static "app/js/all.min.js" %}"></script>
+        
 </body>
 </html>
