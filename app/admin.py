@@ -16,4 +16,6 @@ class CustomerModelAdmin(admin.ModelAdmin):
 class CartModelAdmin(admin.ModelAdmin):
     list_display=["id","user","product","quantity"]
     
+
+    
     
