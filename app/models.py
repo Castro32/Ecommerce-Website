@@ -29,7 +29,6 @@ STATE_CHOICES=(
     ('Meru', 'Meru'),
     ('Tharaka-Nithi', 'Tharaka-Nithi'),
     ('Embu', 'Embu'),
-    ('Kitui', 'Kitui'),
     ('Machakos', 'Machakos'),
     ('Makueni', 'Makueni'),
     ('Nyandarua', 'Nyandarua'),
