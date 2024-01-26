@@ -1,0 +1,45 @@
+# Create a new .gitignore file and add content using echo
+@"
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+*.pyc
+*.pyo
+*.pyd
+
+# Local development settings
+*.env
+*.sqlite3
+
+# Secret key
+secret_key.txt
+
+# Media files
+media/
+
+# Static files
+static/
+
+# Log files
+*.log
+
+# Temporary files
+*.swp
+
+# Database files
+*.db
+*.sqlite
+
+# VS Code settings
+.vscode/
+
+# IDE-specific files
+.idea/
+*.iml
+
+__pycache__/
+*.pyc
+
+# Ignore the virtual environment
+venv/
+"@ | Out-File -FilePath ".gitignore" -Encoding utf8
